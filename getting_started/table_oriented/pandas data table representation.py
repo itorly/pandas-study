@@ -14,3 +14,12 @@ df = pd.DataFrame(
 
 # df
 print('df:\n', df)
+
+# When selecting a single column of a pandas DataFrame,
+# the result is a pandas Series.
+# df["Age"]
+print('df["Age"]:\n', df["Age"])
+
+# create a Series from scratch
+ages = pd.Series([22, 35, 58], name="Age")
+
