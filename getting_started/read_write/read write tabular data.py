@@ -26,3 +26,8 @@ print('titanic:\n', titanic)
 # read first 5 rows
 head = titanic.head()
 print('\nhead:\n', head)
+
+# a technical summary of a DataFrame
+print('\ntitanic.info():\n')
+titanic.info()
+
