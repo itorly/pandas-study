@@ -23,9 +23,14 @@ titanic = pd.read_excel("titanic.xlsx", sheet_name="passengers")
 print('titanic:\n', titanic)
 
 # head
-# read first 5 rows
+# read the first 5 rows
 head = titanic.head()
 print('\nhead:\n', head)
+
+# tail
+# read the last 5 rows
+tail = titanic.tail()
+print('\ntail:\n', tail)
 
 # a technical summary of a DataFrame
 print('\ntitanic.info():\n')
