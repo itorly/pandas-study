@@ -65,3 +65,19 @@ print('\ntitanic_2_3:\n', titanic_2_3)
 
 head_2_3 = titanic_2_3.head()
 print('\nhead_2_3:\n', head_2_3)
+
+
+# 3.3.4 conditional function: notna()
+print('\n### 3.3.4 conditional function: notna()\n')
+
+notna = titanic["Age"].notna()
+print('notna:\n', notna)
+
+age_notna = titanic[notna]
+print('\nage_notna:\n', age_notna)
+
+head_age_notna = age_notna.head()
+print('\nhead_age_notna:\n', head_age_notna)
+
+shape_age_notna = age_notna.shape
+print('\nshape_age_notna:\n', shape_age_notna)
