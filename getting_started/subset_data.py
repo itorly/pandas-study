@@ -24,3 +24,7 @@ print('type_age_sex:\n', type_age_sex)
 
 shape_age_sex = titanic[["Age", "Sex"]].shape
 print('shape_age_sex:\n', shape_age_sex)
+
+# 3.3 conditional expression or function
+print('\n## 3.3 conditional expression or function\n')
+
