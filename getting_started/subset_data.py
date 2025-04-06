@@ -1,8 +1,10 @@
 import pandas as pd
-
+# 3 subset data
+print('# 3 subset data\n')
 titanic = pd.read_csv("data/titanic.csv")
 
-# select a single column
+# 3.1 select a single column
+print('## 3.1 select a single column\n')
 ages = titanic["Age"]
 print('ages:\n', ages)
 
@@ -12,7 +14,8 @@ print('type_age:\n', type_age)
 shape_age = ages.shape
 print('shape_age:\n', shape_age)
 
-# select multiple columns
+# 3.2 select multiple columns
+print('## 3.2 select multiple columns\n')
 age_sex = titanic[["Age", "Sex"]]
 print('age_sex:\n', age_sex)
 
