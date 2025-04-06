@@ -28,3 +28,15 @@ print('shape_age_sex:\n', shape_age_sex)
 # 3.3 conditional expression or function
 print('\n## 3.3 conditional expression or function\n')
 
+# 3.3.1 conditional expression: greater than
+print('## 3.3.1 conditional expression: greater than\n')
+# The output of the conditional expression is
+# a Series of boolean values
+age_gt_35 = titanic["Age"] > 35
+print('age_gt_35:\n', age_gt_35)
+
+above_35 = titanic[age_gt_35]
+print('\nabove_35:\n', above_35)
+
+# above_35.shape
+print('\nabove_35.shape:\n', above_35.shape)
