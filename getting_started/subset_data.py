@@ -52,3 +52,16 @@ print('\nequal_to_2_or_3:\n', equal_to_2_or_3)
 head_equal_to_2_or_3 = equal_to_2_or_3.head()
 print('\nhead_equal_to_2_or_3:\n', head_equal_to_2_or_3)
 
+
+# 3.3.3 conditional function: isin()
+print('\n### 3.3.3 conditional function: isin()\n')
+
+# check for which rows the Pclass column is either 2 or 3.
+isin_2_3 = titanic["Pclass"].isin([2, 3])
+print('isin_2_3:\n', isin_2_3)
+
+titanic_2_3 = titanic[isin_2_3]
+print('\ntitanic_2_3:\n', titanic_2_3)
+
+head_2_3 = titanic_2_3.head()
+print('\nhead_2_3:\n', head_2_3)
