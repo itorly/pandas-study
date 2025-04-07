@@ -93,4 +93,17 @@ print('\n## 3.3 select specific rows and columns from a DataFrame\n')
 # 3.3.1 loc and iloc
 print('### 3.3.1 loc and iloc\n')
 
+# 3.3.1.1 select
+adult_names = titanic.loc[titanic["Age"] > 35, "Name"]
+print('\nadult_names.head():\n', adult_names.head())
 
+titanic_iloc_ = titanic.iloc[9:25, 2:5]
+print('\ntitanic_iloc_:\n', titanic_iloc_)
+
+# 3.3.1.2 assign
+titanic.iloc[0:3, 3] = "anonymous"
+names = titanic['Name']
+print('\nnames:\n', names)
+
+changed = titanic.iloc[0:3, 3]
+print('\nchanged:\n', changed)
