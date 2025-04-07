@@ -87,3 +87,10 @@ shape_age_notna = age_notna.shape
 print('\nshape_age_notna:\n', shape_age_notna)
 
 
+# 3.3 select specific rows and columns from a DataFrame
+print('\n## 3.3 select specific rows and columns from a DataFrame\n')
+
+# 3.3.1 loc and iloc
+print('### 3.3.1 loc and iloc\n')
+
+
