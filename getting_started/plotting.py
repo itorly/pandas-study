@@ -30,3 +30,7 @@ print('method_names:\n', method_names)
 # 4.5 box plot
 air_quality.plot.box()
 plt.show()
+
+# 4.6 area
+air_quality.plot.area(figsize=(12, 4), subplots=True)
+plt.show()
