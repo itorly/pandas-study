@@ -41,3 +41,9 @@ fig, axs = plt.subplots(figsize=(12, 4))
 air_quality.plot.area(ax=axs)
 axs.set_ylabel("NO$_2$ concentration")
 fig.savefig("output/no2_concentrations.png")
+
+# supplement
+# 1.histogram
+air_quality.plot.hist(bins=10)
+plt.show()
+
