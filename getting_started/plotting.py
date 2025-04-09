@@ -47,3 +47,11 @@ fig.savefig("output/no2_concentrations.png")
 air_quality.plot.hist(bins=10)
 plt.show()
 
+# 2.sub plot
+fig, axes = plt.subplots(nrows=2, ncols=2)
+air_quality.plot(ax=axes[0, 0])
+air_quality.plot.scatter(x="station_london", y="station_paris", ax=axes[0, 1])
+air_quality.plot.box(ax=axes[1, 0])
+air_quality.plot.hist(ax=axes[1, 1])
+plt.show()
+
