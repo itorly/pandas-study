@@ -32,5 +32,12 @@ air_quality.plot.box()
 plt.show()
 
 # 4.6 area
+# each of the columns in a separate subplot
 air_quality.plot.area(figsize=(12, 4), subplots=True)
 plt.show()
+
+# 4.7 further customize, extend or save the resulting plot
+fig, axs = plt.subplots(figsize=(12, 4))
+air_quality.plot.area(ax=axs)
+axs.set_ylabel("NO$_2$ concentration")
+fig.savefig("output/no2_concentrations.png")
