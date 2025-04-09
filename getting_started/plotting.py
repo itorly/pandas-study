@@ -27,4 +27,6 @@ plt.show()
 method_names = [method_name for method_name in dir(air_quality.plot) if not method_name.startswith("_")]
 print('method_names:\n', method_names)
 
-
+# 4.5 box plot
+air_quality.plot.box()
+plt.show()
