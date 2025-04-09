@@ -23,3 +23,8 @@ air_quality.plot.scatter(x="station_london", y="station_paris", alpha=0.5)
 plt.title('Air Quality measured in London versus Paris - NO₂ Concentrations')
 plt.show()
 
+# 4.4 method names of DataFrame.plot
+method_names = [method_name for method_name in dir(air_quality.plot) if not method_name.startswith("_")]
+print('method_names:\n', method_names)
+
+
