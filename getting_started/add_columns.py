@@ -32,4 +32,9 @@ air_quality_renamed = air_quality.rename(
 renamed_head = air_quality_renamed.head()
 print('renamed_head:\n', renamed_head)
 
-
+# 5.2.2 rename columns with a function
+print('\n## 5.2.2 rename columns with a function\n')
+# rename the data columns by replacing all spaces with underscores
+air_quality_renamed = air_quality.rename(columns=lambda x: x.replace("_", " "))
+renamed_head = air_quality_renamed.head()
+print('renamed_head:\n', renamed_head)
