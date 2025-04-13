@@ -17,3 +17,19 @@ print('head:\n', head)
 air_quality["ratio"] = air_quality["station_paris"] / air_quality["station_london"]
 head = air_quality.head()
 print('head:\n', head)
+
+# 5.2 rename columns
+print('\n## 5.2 rename columns\n')
+# 5.2.1 rename columns with fixed names
+# rename the data columns to the corresponding station identifiers
+air_quality_renamed = air_quality.rename(
+    columns={
+        "station_antwerp": "BETR801",
+        "station_paris": "FR04014",
+        "station_london": "London Westminster",
+    }
+)
+renamed_head = air_quality_renamed.head()
+print('renamed_head:\n', renamed_head)
+
+
