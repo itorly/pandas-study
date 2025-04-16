@@ -14,4 +14,8 @@ print('age_mean:\n', age_mean)
 age_fare__median = titanic[["Age", "Fare"]].median()
 print('age_fare__median:\n', age_fare__median)
 
+# 6.3 describe function
+describe = titanic[["Age", "Fare"]].describe()
+print('\ndescribe:\n', describe)
+
 
