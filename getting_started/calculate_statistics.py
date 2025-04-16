@@ -18,4 +18,6 @@ print('age_fare__median:\n', age_fare__median)
 describe = titanic[["Age", "Fare"]].describe()
 print('\ndescribe:\n', describe)
 
-
+# 6.4 agg function
+agg = titanic.agg({"Age": ["min", "max", "median", "skew"], "Fare": ["min", "max", "median", "mean"], })
+print('\nagg:\n', agg)
