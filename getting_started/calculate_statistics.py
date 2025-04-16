@@ -7,6 +7,7 @@ head = titanic.head()
 print('head:\n', head)
 
 # 6.1 Aggregating statistics
+print('\n## 6.1 Aggregating statistics\n')
 # 6.1.1 average
 age_mean = titanic["Age"].mean()
 print('age_mean:\n', age_mean)
@@ -22,4 +23,18 @@ print('\ndescribe:\n', describe)
 # 6.1.4 agg function
 agg = titanic.agg({"Age": ["min", "max", "median", "skew"], "Fare": ["min", "max", "median", "mean"], })
 print('\nagg:\n', agg)
+
+# 6.2 Aggregating statistics grouped by category
+print('\n## 6.2 Aggregating statistics grouped by category\n')
+mean = titanic[["Sex", "Age"]].groupby("Sex").mean()
+print('mean:\n', mean)
+
+sex__mean = titanic.groupby("Sex").mean(numeric_only=True)
+print('sex__mean:\n', sex__mean)
+
+age__mean = titanic.groupby("Sex")["Age"].mean()
+print('age__mean:\n', age__mean)
+
+fare__mean = titanic.groupby(["Sex", "Pclass"])["Fare"].mean()
+print('fare__mean:\n', fare__mean)
 
