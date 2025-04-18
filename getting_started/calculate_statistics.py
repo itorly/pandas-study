@@ -38,3 +38,10 @@ print('age__mean:\n', age__mean)
 fare__mean = titanic.groupby(["Sex", "Pclass"])["Fare"].mean()
 print('fare__mean:\n', fare__mean)
 
+# 6.3 Count number of records by category
+print('\n## 6.3 Count number of records by category\n')
+
+# 6.3.1 value_counts function
+counts = titanic["Pclass"].value_counts()
+print('counts:\n', counts)
+
