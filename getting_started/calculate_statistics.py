@@ -45,3 +45,7 @@ print('\n## 6.3 Count number of records by category\n')
 counts = titanic["Pclass"].value_counts()
 print('counts:\n', counts)
 
+# 6.3.2 a groupby operation
+# a groupby operation in combination with counting of the number of records within each group
+counts = titanic.groupby("Pclass")["Pclass"].count()
+print('counts:\n', counts)
