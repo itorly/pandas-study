@@ -40,4 +40,23 @@ print('\npivot:\n', pivot)
 
 plot = no2.pivot(columns="location", values="value").plot()
 print('\nplot:\n', plot)
-plt.show()
+# plt.show()
+
+# 7.3 Pivot table
+print('\n## 7.3 Pivot table\n')
+pivot_table = air_quality.pivot_table(values="value", index="location", columns="parameter", aggfunc="mean")
+print('\npivot_table:\n', pivot_table)
+
+pivot_table_with_margins =air_quality.pivot_table(
+    values="value",
+    index="location",
+    columns="parameter",
+    aggfunc="mean",
+    margins=True,
+)
+print('\npivot_table_with_margins:\n', pivot_table_with_margins)
+
+same_result = air_quality.groupby(["parameter", "location"])[["value"]].mean()
+print('\nsame_result:\n', same_result)
+
+
