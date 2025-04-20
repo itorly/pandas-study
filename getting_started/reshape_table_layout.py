@@ -60,3 +60,11 @@ same_result = air_quality.groupby(["parameter", "location"])[["value"]].mean()
 print('\nsame_result:\n', same_result)
 
 
+# 7.4 Wide to long format
+print('\n## 7.4 Wide to long format\n')
+
+# 7.4.1 reset_index() function
+no2_pivoted = no2.pivot(columns="location", values="value").reset_index()
+pivoted_head = no2_pivoted.head()
+print('\npivoted_head:\n', pivoted_head)
+
