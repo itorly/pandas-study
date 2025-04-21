@@ -68,3 +68,22 @@ no2_pivoted = no2.pivot(columns="location", values="value").reset_index()
 pivoted_head = no2_pivoted.head()
 print('\npivoted_head:\n', pivoted_head)
 
+# 7.4.2 melt() function
+no_2 = no2_pivoted.melt(id_vars="date.utc")
+no_2_head = no_2.head()
+print('\nno_2_head:\n', no_2_head)
+
+no_2 = no2_pivoted.melt(
+    id_vars="date.utc",
+    # value_vars defines which columns to melt together
+    value_vars=["BETR801", "FR04014", "London Westminster"],
+    # value_name provides a custom column name for the values column
+    # instead of the default column name value
+    value_name="NO_2",
+    # var_name provides a custom column name for the column collecting
+    # the column header names.
+    # Otherwise, it takes the index name or a default variable
+    var_name="id_location",
+)
+no_2_head = no_2.head()
+print('\nno_2_head:\n', no_2_head)
