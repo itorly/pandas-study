@@ -26,6 +26,8 @@ print('air_quality_pm25_head:\n', air_quality_pm25_head)
 
 # 8.1 Concatenating objects
 print('\n## 8.1 Concatenating objects\n')
+
+# 8.1.1 concat() function
 # combine the measurements of NO2 and PM2.5 two tables with a similar structure, in a single table
 
 air_quality = pd.concat([air_quality_pm25, air_quality_no2], axis=0)
