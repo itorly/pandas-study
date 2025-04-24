@@ -36,7 +36,15 @@ air_quality = pd.concat([air_quality_pm25, air_quality_no2], axis=0)
 air_quality_axis_1 = pd.concat([air_quality_pm25, air_quality_no2], axis=1)
 print('\nair_quality_axis_1:\n', air_quality_axis_1)
 
+air_quality_head = air_quality.head()
+print('air_quality_head:\n', air_quality_head)
+
+print('Shape of the ``air_quality_pm25`` table: ', air_quality_pm25.shape)
+print('Shape of the ``air_quality_no2`` table: ', air_quality_no2.shape)
+print('Shape of the resulting ``air_quality`` table: ', air_quality.shape)
+
 # 8.1.1.1 concat() function, axis = 0 and axis = 1
+print("\n## 8.1.1.1 concat() function, axis = 0 and axis =1")
 df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
 df2 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
 
@@ -46,10 +54,32 @@ print('\nresult_axis_0:\n', result_axis_0)
 result_axis_1 = pd.concat([df1, df2], axis=1)
 print('\nresult_axis_1:\n', result_axis_1)
 
+# 8.1.1.2 concat() function, mismatched columns (for axis=0) and mismatched indexes (for axis=1)
+print("\n## 8.1.1.2 concat() function, mismatched columns (for axis=0) and mismatched indexes (for axis=1)\n")
+# Mismatched Columns (for axis=0)
+# join='outer' (default): Missing columns are filled with NaN.
+# join='inner': Only common columns are kept.
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5, 6], 'C': [7, 8]})  # Column 'C' is new
 
-air_quality_head = air_quality.head()
-print('air_quality_head:\n', air_quality_head)
+# Default: outer join (keeps all columns, fills missing values with NaN)
+result_outer = pd.concat([df1, df2], axis=0)
+print("Outer join (axis=0):\n", result_outer)
 
-print('Shape of the ``air_quality_pm25`` table: ', air_quality_pm25.shape)
-print('Shape of the ``air_quality_no2`` table: ', air_quality_no2.shape)
-print('Shape of the resulting ``air_quality`` table: ', air_quality.shape)
+# Inner join (only keeps common columns)
+result_inner = pd.concat([df1, df2], axis=0, join='inner')
+print("\nInner join (axis=0):\n", result_inner)
+
+# Mismatched Indexes (for axis=1)
+# join='outer' (default): Missing rows are filled with NaN.
+# join='inner': Only common rows are kept.
+df3 = pd.DataFrame({'A': [1, 2]}, index=[0, 1])
+df4 = pd.DataFrame({'B': [3, 4]}, index=[1, 2])  # Index '2' is new
+
+# Default: outer join (keeps all rows, fills missing values with NaN)
+result_outer = pd.concat([df3, df4], axis=1)
+print("Outer join (axis=1):\n", result_outer)
+
+# Inner join (only keeps common rows)
+result_inner = pd.concat([df3, df4], axis=1, join='inner')
+print("\nInner join (axis=1):\n", result_inner)
