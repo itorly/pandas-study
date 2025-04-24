@@ -83,3 +83,8 @@ print("Outer join (axis=1):\n", result_outer)
 # Inner join (only keeps common rows)
 result_inner = pd.concat([df3, df4], axis=1, join='inner')
 print("\nInner join (axis=1):\n", result_inner)
+
+# 8.1.1.3 concat() function with 'keys' argument
+print("\n## 8.1.1.3 concat() function with 'keys' argument")
+air_quality_with_keys = pd.concat([air_quality_pm25, air_quality_no2], keys=["PM25", "NO2"])
+print("\nair_quality_with_keys:\n", air_quality_with_keys)
