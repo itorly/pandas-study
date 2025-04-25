@@ -21,7 +21,7 @@ air_quality_pm25 = pd.read_csv("data/air_quality_pm25_long.csv",
 air_quality_pm25 = air_quality_pm25[["date.utc", "location",
                                      "parameter", "value"]]
 
-air_quality_pm25_head =air_quality_pm25.head()
+air_quality_pm25_head = air_quality_pm25.head()
 print('air_quality_pm25_head:\n', air_quality_pm25_head)
 
 # 8.1 Concatenating objects
@@ -88,3 +88,10 @@ print("\nInner join (axis=1):\n", result_inner)
 print("\n## 8.1.1.3 concat() function with 'keys' argument")
 air_quality_with_keys = pd.concat([air_quality_pm25, air_quality_no2], keys=["PM25", "NO2"])
 print("\nair_quality_with_keys:\n", air_quality_with_keys)
+
+# 8.1.2 multi-indexing
+# advanced indexing
+
+# 8.1.3 reset_index
+
+# 8.1.4 object concatenation
