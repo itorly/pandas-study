@@ -107,6 +107,7 @@ print('stations_coord_head:\n', stations_coord_head)
 air_quality_head = air_quality.head()
 print('\nair_quality_head:\n', air_quality_head)
 
+# 8.2.1 the same associated columns
 air_quality = pd.merge(air_quality, stations_coord, how="left", on="location")
 air_quality_head_after_merge = air_quality.head()
 print('\nair_quality_head_after_merge:\n', air_quality_head_after_merge)
