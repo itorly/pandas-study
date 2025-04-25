@@ -100,3 +100,13 @@ print("\nair_quality_with_keys:\n", air_quality_with_keys)
 # 8.2 Join tables using a common identifier
 print('\n## 8.2 Join tables using a common identifier\n')
 
+stations_coord = pd.read_csv("data/air_quality_stations.csv")
+stations_coord_head = stations_coord.head()
+print('stations_coord_head:\n', stations_coord_head)
+
+air_quality_head = air_quality.head()
+print('\nair_quality_head:\n', air_quality_head)
+
+air_quality = pd.merge(air_quality, stations_coord, how="left", on="location")
+air_quality_head_after_merge = air_quality.head()
+print('\nair_quality_head_after_merge:\n', air_quality_head_after_merge)
