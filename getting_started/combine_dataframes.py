@@ -117,6 +117,8 @@ print('\nair_quality_head_after_merge:\n', air_quality_head_after_merge)
 # 8.2.2 different associated columns
 print ("\n## 8.2.2 different associated columns")
 air_quality_parameters = pd.read_csv("data/air_quality_parameters.csv")
+# The 'parameter' is the column name of the table 'air_quality',
+# in comparison, the 'id' is the column name of the table 'air_quality_parameters'.
 air_quality = pd.merge(air_quality, air_quality_parameters,
                        how='left', left_on='parameter', right_on='id')
 air_quality_head_after_merge = air_quality.head()
