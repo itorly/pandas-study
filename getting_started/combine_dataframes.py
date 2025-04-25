@@ -95,3 +95,8 @@ print("\nair_quality_with_keys:\n", air_quality_with_keys)
 # 8.1.3 reset_index
 
 # 8.1.4 object concatenation
+
+
+# 8.2 Join tables using a common identifier
+print('\n## 8.2 Join tables using a common identifier\n')
+
