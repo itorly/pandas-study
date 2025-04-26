@@ -49,3 +49,9 @@ print('\ndifference:\n', difference)
 # The various time concepts supported by pandas are explained in the user guide section on time related concepts.
 # https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-overview
 
+# 9.1.2.2 add a new column to the DataFrame containing only the month of the measurement
+print("\n## 9.1.2.2 add a new column to the DataFrame containing only the month of the measurement")
+air_quality["month"] = air_quality["datetime"].dt.month
+air_quality_head_after_add_month = air_quality.head()
+print('\nair_quality_head_after_add_month:\n', air_quality_head_after_add_month)
+
