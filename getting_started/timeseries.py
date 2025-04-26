@@ -106,3 +106,15 @@ print('\nday:\n', day)
 hour = no2.index.hour
 print('\nhour:\n', hour)
 
+# 9.2.4 Create a plot by indexing datetime
+# Create a plot of the NO2 values in the different stations from the 20th of May till the end of 21st of May
+fig2, ax2 = plt.subplots(figsize=(12, 8))
+# plt.figure(figsize=(16, 8))
+no2_plot = no2["2019-05-20":"2019-05-21"].plot(ax=ax2)
+plt.xlabel("Date")
+plt.ylabel("$NO_2 (µg/m^3)$")
+plt.title("NO2 values in the different stations from the 20th of May till the end of 21st of May")
+# plt.show()
+plt.savefig("output/9.2.4.png")
+# Close the figure after saving
+plt.close()
