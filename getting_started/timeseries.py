@@ -91,3 +91,18 @@ print('\nair_quality:\n', air_quality)
 print('\nafter set_index():\n')
 air_quality.set_index("datetime", inplace=True)
 print('\nair_quality:\n', air_quality)
+
+# 9.2.3 properties available on the index
+# we do not need the dt accessor to get the time series properties,
+# but have these properties available on the index directly
+year = no2.index.year
+print('\nyear:\n', year)
+month = no2.index.month
+print('\nmonth:\n', month)
+weekday = no2.index.weekday
+print('\nweekday:\n', weekday)
+day = no2.index.day
+print('\nday:\n', day)
+hour = no2.index.hour
+print('\nhour:\n', hour)
+
