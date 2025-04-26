@@ -55,3 +55,11 @@ air_quality["month"] = air_quality["datetime"].dt.month
 air_quality_head_after_add_month = air_quality.head()
 print('\nair_quality_head_after_add_month:\n', air_quality_head_after_add_month)
 
+# 9.1.2.3 the average NO2 concentration for each day of the week for each of the measurement locations
+print("\n## 9.1.2.3 the average NO2 concentration for each day of the week for each of the measurement locations")
+
+mean = air_quality.groupby(
+    [air_quality["datetime"].dt.weekday, "location"])["value"].mean()
+
+print('\nmean:\n', mean)
+
