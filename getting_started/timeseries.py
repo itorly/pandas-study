@@ -63,3 +63,17 @@ mean = air_quality.groupby(
 
 print('\nmean:\n', mean)
 
+# 9.1.2.4 Plot the typical NO2 pattern during the day of our time series of all stations
+print("\n## 9.1.2.4 Plot the typical NO2 pattern during the day of our time series of all stations")
+# Create a figure and subplots with dimensions of 12x4 inches.
+fig, axs = plt.subplots(figsize=(12, 4))
+
+plot = air_quality.groupby(air_quality["datetime"].dt.hour)["value"].mean().plot(kind='bar', rot=0, ax=axs)
+print('\nplot:\n', plot)
+# custom x label using Matplotlib
+plt.xlabel("Hour of the day")
+
+plt.ylabel("$NO_2 (µg/m^3)$")
+plt.title("Typical NO2 pattern during the day")
+# plt.show()
+plt.savefig("output/9.1.2.4.png")
