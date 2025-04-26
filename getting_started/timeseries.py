@@ -57,7 +57,7 @@ print('\nair_quality_head_after_add_month:\n', air_quality_head_after_add_month)
 
 # 9.1.2.3 the average NO2 concentration for each day of the week for each of the measurement locations
 print("\n## 9.1.2.3 the average NO2 concentration for each day of the week for each of the measurement locations")
-
+# split-apply-combine
 mean = air_quality.groupby(
     [air_quality["datetime"].dt.weekday, "location"])["value"].mean()
 
@@ -67,7 +67,7 @@ print('\nmean:\n', mean)
 print("\n## 9.1.2.4 Plot the typical NO2 pattern during the day of our time series of all stations")
 # Create a figure and subplots with dimensions of 12x4 inches.
 fig, axs = plt.subplots(figsize=(12, 4))
-
+# split-apply-combine
 plot = air_quality.groupby(air_quality["datetime"].dt.hour)["value"].mean().plot(kind='bar', rot=0, ax=axs)
 print('\nplot:\n', plot)
 # custom x label using Matplotlib
@@ -77,3 +77,13 @@ plt.ylabel("$NO_2 (µg/m^3)$")
 plt.title("Typical NO2 pattern during the day")
 # plt.show()
 plt.savefig("output/9.1.2.4.png")
+
+
+# 9.2 Datetime as index
+print("\n## 9.2 Datetime as index")
+
+# 9.2.1 pivot() function set the datetime as index
+no2 = air_quality.pivot(index="datetime", columns="location", values="value")
+print('\nno2:\n', no2)
+
+
