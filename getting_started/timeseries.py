@@ -86,4 +86,8 @@ print("\n## 9.2 Datetime as index")
 no2 = air_quality.pivot(index="datetime", columns="location", values="value")
 print('\nno2:\n', no2)
 
-
+# 9.2.2 set_index() function
+print('\nair_quality:\n', air_quality)
+print('\nafter set_index():\n')
+air_quality.set_index("datetime", inplace=True)
+print('\nair_quality:\n', air_quality)
