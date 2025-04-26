@@ -29,3 +29,23 @@ print('\nair_quality_datetime:\n', air_quality_datetime)
 read_csv_and_convert_to_datetime = pd.read_csv("data/air_quality_no2_long.csv", parse_dates=["date.utc"])
 print('\nread_csv_and_convert_to_datetime:\n', read_csv_and_convert_to_datetime)
 
+# In pandas we call these datetime objects similar to datetime.datetime from the standard library as pandas.Timestamp.
+
+# 9.1.2 the use of pandas.Timestamp
+print("\n## 9.1.2 the use of pandas.Timestamp")
+
+# 9.1.2.1 min, max and difference
+datetime_min = air_quality["datetime"].min()
+print('\ndatetime_min:\n', datetime_min)
+
+datetime_max = air_quality["datetime"].max()
+print('\ndatetime_max:\n', datetime_max)
+
+difference = datetime_max - datetime_min
+# The result is a pandas.Timedelta object, similar to datetime.timedelta from the standard Python library and
+# defining a time duration.
+print('\ndifference:\n', difference)
+
+# The various time concepts supported by pandas are explained in the user guide section on time related concepts.
+# https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-overview
+
