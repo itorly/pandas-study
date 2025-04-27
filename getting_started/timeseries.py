@@ -76,8 +76,7 @@ plt.xlabel("Hour of the day")
 plt.ylabel("$NO_2 (µg/m^3)$")
 plt.title("Typical NO2 pattern during the day")
 # plt.show()
-plt.savefig("output/9.1.2.4.png")
-
+# plt.savefig("output/9.1.2.4.png")
 
 # 9.2 Datetime as index
 print("\n## 9.2 Datetime as index")
@@ -115,6 +114,22 @@ plt.xlabel("Date")
 plt.ylabel("$NO_2 (µg/m^3)$")
 plt.title("NO2 values in the different stations from the 20th of May till the end of 21st of May")
 # plt.show()
-plt.savefig("output/9.2.4.png")
+# plt.savefig("output/9.2.4.png")
 # Close the figure after saving
 plt.close()
+
+# 9.3 Resample a time series to another frequency
+print("\n## 9.3 Resample a time series to another frequency")
+
+monthly_max = no2.resample("ME").max()
+print('\nmonthly_max:\n', monthly_max)
+
+# An overview of the aliases used to define time series frequencies is given in the offset aliases overview table.
+# https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases
+
+print('\nmonthly_max.index.freq:\n', monthly_max.index.freq)
+
+no2.resample("D").mean().plot(style="-o", figsize=(10, 5))
+plt.ylabel("$NO_2 (µg/m^3)$")
+plt.title("Daily mean NO2 concentrations")
+plt.savefig("output/9.3.png")
