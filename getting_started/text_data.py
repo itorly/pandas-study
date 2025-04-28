@@ -20,3 +20,11 @@ print('\nsplit:\n', split)
 # get
 titanic["Surname"] = titanic["Name"].str.split(",").str.get(0)
 print('\ntitanic["Surname"]:\n', titanic["Surname"])
+
+# 10.3 contains and indexing
+# contains
+contains = titanic["Name"].str.contains("Countess")
+print('\ncontains:\n', contains)
+# indexing
+contains_records = titanic[titanic["Name"].str.contains("Countess")]
+print('\ncontains_records:\n', contains_records)
