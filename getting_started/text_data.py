@@ -28,3 +28,16 @@ print('\ncontains:\n', contains)
 # indexing
 contains_records = titanic[titanic["Name"].str.contains("Countess")]
 print('\ncontains_records:\n', contains_records)
+
+# 10.4 len, idmax and loc
+# len
+len = titanic["Name"].head().str.len()
+print('\nlen:\n', len)
+
+# idxmax, the id of the maximum length
+idxmax = titanic["Name"].head().str.len().idxmax()
+print('\nidxmax:\n', idxmax)
+
+# loc
+loc = titanic.loc[titanic["Name"].str.len().idxmax(), "Name"]
+print('\nloc:\n', loc)
